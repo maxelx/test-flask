@@ -10,6 +10,7 @@ from resources.store import Store, StoreList
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]=False #modification tracker is not turnon 
+app.config["PROPAGATE_EXCEPTIONS"] = True
 app.secret_key = "mael"
 api = Api(app)
 
