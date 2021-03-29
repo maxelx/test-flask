@@ -19,10 +19,6 @@ app.config["JWT_BLACKLIST_TOKEN_CHECKS"] = ["access", "refresh"]
 app.secret_key = "mael" #app.config['JWT_SECRETE_KEY']
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 jwt = JWTManager(app) #no create /auth
 
 @jwt.additional_claims_loader
